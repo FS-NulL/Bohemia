@@ -1,0 +1,147 @@
+================================================================================
+* Urban Terror Level * 
+--------------------------------------------------------------------------------
+Title			: Bohemia
+Author			: Jonathan "$NulL" Norton
+Date			: 2007 - 2010
+
+
+--------------------------------------------------------------------------------
+* Level Description *
+--------------------------------------------------------------------------------
+Bohemia places the player in the midst of a somewhat unconventional city scape, 
+tall buildings arc over the players as they run through the city's narrow 
+streets and interlocking courtyards.
+
+
+--------------------------------------------------------------------------------
+Single Player		: AAS exists, but may crash.
+Deathmatch (FFA)	: Yes
+Team Deathmatch		: Yes
+Team Survivor 		: Yes
+Capture and Hold	: Yes
+Follow the leader	: Yes
+Capture the flag	: Yes
+Suggested player load	: 8-14 Not more.
+New Textures		: Yes
+New Sounds		: Yes
+New Models		: Yes
+
+
+--------------------------------------------------------------------------------
+* Construction *
+--------------------------------------------------------------------------------
+Map Base		: None
+Prefabs used		: None
+Mapobjects used		: LT1's (www.blackrayne.net)
+				Tv+
+				Lights
+				Bench
+				Nimrod Set
+				Horror Set
+				Truck
+				
+			  Bladekiller & Twoseven's
+				Tree model
+				
+			  Vogt's
+				Punishment
+
+Editor used		: Custom Q3Radiant 
+			  3DSMax 5
+Other utilities used	: Photoshop, Q3Map2(FS_bumpy_2a), q3map2toolz, Notepad, 
+			  Urban Terror BSP, FS Particle Studio.
+Compile machine		: AMD 3000XP 1024Mb Ram
+Compile time		: BSP  : ~ 2 Minute
+			: VIS  : ~ 2 Minute
+			: LIGHT: ~ 13 Hours  :\___/
+Compile Switches        : BSP -meta
+			  VIS -saveprt
+			  RAD -bounce 12 -bouncescale 3 -fast -patchshadows -radbump -samples 2 -shade -v
+
+
+--------------------------------------------------------------------------------
+* OTHER LEVELS BY $NulL *
+--------------------------------------------------------------------------------
+Subterra
+Canyon
+Mandolin
+Railed
+
+(Keep your eyes out for: Cascade!)
+
+
+--------------------------------------------------------------------------------
+* CREDITS *
+--------------------------------------------------------------------------------
+Textures:
+	Ydnar
+	Photorealistic
+	Minotauro
+	IR
+	evillair
+	subverse
+	sweetnutz
+	Mayangang
+	CG Textures
+
+
+id		: For the Quake series
+SID/FS		: For this Most excelent mod
+ydnar		: Q3map2 rocks our little world + Textures
+LT1		: Models galore at a reasonable price 
+Codey		: Mapname, finding awsome music and jokes about goats!
+BerneyBoy       : Photorealistic Texture Pack.
+#urbanmappers   : <3
+....		: Everyone who I accidentally forgot to mention here :/
+
+
+--------------------------------------------------------------------------------
+* COPYRIGHT / PERMISSIONS *
+--------------------------------------------------------------------------------
+Authors MAY NOT use this level as a base to build additional levels.
+This map MAY NOT be sold, or in any other way turn into profit for any other
+person than the author. This map MAY be distributed on any media as long as this
+media is distributed freely without anyone having to pay for it.
+This level is designed for the Quake 3 Total Conversion "Urban Terror" and is 
+not to be used, replicated or edited for any other Mod, Total Conversion, Game 
+or Game Engine; nor update without expressed permission from the author for use 
+in any game or game moification including but not limited to the quake 3 
+modification "Urban terror".
+================================================================================
+
+I do think that all the skies of all the worlds might just turn dark if he ever,
+for one moment, accepts it.
+
+
+================================================================================
+* In Case I Lose This: Bohemia RAD Compile.bat *
+================================================================================
+
+@echo off
+
+set map=ut4_bohemia
+
+echo STARTING BSP:
+time /T
+start "Q3map2: Compiling %map% BSP" /low /wait "G:\Games\utils\Q3map2\q3map_2.5.16_win32_x86\q3map2.exe" -meta -fs_basepath "G:\Games\UrbanTerror" -fs_game q3ut4  "G:\Games\UrbanTerror\q3ut4\maps\ut4_bohemia.map"
+
+echo STARTING VIS:
+time /T
+start "Q3map2: Compiling %map% VIS" /low /wait "G:\Games\utils\Q3map2\q3map_2.5.16_win32_x86\q3map2.exe" -vis -saveprt -fs_basepath "G:\Games\UrbanTerror" -fs_game q3ut4  "G:\Games\UrbanTerror\q3ut4\maps\ut4_bohemia.bsp"
+
+echo STARTING RAD:
+time /T
+start "Q3map2: Compiling %map% RAD" /low /wait "G:\Games\utils\Q3map2\q3map2_fs_20g\FS_q3map_Radbump_2a.exe" -light -bounce 12 -bouncescale 3 -fast -patchshadows -radbump -samples 2 -shade -fs_basepath "G:\Games\UrbanTerror" -fs_game q3ut4  "G:\Games\UrbanTerror\q3ut4\maps\ut4_bohemia.bsp"
+
+
+g:
+
+cd games\urbanterror\q3ut4\maps
+
+bsp -si ut4_bohemia.bsp ut4_bohemia.surface
+
+
+start "BSPC: Compiling %map% AAS" /low /wait "G:\Games\quake3\Tools\bspc.exe" -forcesidesvisible -noverbose -optimize -bsp2aas "G:\Games\UrbanTerror\q3ut4\maps\ut4_bohemia.bsp"
+
+
