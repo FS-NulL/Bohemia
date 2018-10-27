@@ -1,0 +1,5 @@
+{
+map "ut4_bohemia"
+longname "Bohemia"
+type "ut_ffa ut_team ut_survivor ut_follow ut_cah ut_ctf ut_bomb"
+}
